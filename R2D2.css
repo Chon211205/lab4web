@@ -89,3 +89,36 @@ body{
     transform: scale(1.01); /*Uso de transform para escalar el anillo y no para posicionamiento*/
 }
 
+/*Cabeza de R2-D2*/
+.cabeza{
+    width: 88%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: clamp(6px, 1.2vw, 10px);
+    padding: clamp(10px, 2vw, 18px);
+
+    border-radius: 999px 999px 80px 80px;
+
+    background: linear-gradient(var(--metal), var(--metal2));
+}
+
+/*before */
+.cabeza::before{
+    content: "";
+    justify-self: center;
+    width: 34%;
+    height: clamp(18px, 3.5vw, 34px);
+    border-radius: 999px;
+    background: linear-gradient(var(--blanco), var(--metal2));
+}
+
+/*after*/
+.cabeza::after{
+    content: "";
+    justify-self: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 30% 30%, var(--blanco) 0 18%, transparent 19%),
+        radial-gradient(circle at 45% 55%, hsl(var(--blueBase) 90% 70%) 0 28%, hsl(var(--blueBase) 60% 10%) 29% 100%);
+}
