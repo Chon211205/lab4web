@@ -1,0 +1,33 @@
+/*Archivo css */
+
+/*Variable base para controlar todos los colores del disenio */
+
+:root{
+    /* Azul base */
+    --blueBase: 210;
+
+    /*Tonos de azul */
+    --blue: hsl(var(--blueBase) 90% 55%);
+    --blue2: hsl(var(--blueBase) 88% 42%);
+    --blue3: hsl(var(--blueBase) 95% 65%);
+
+    /*Metal */
+    --metal: hsl(var(--blueBase) 12% 92%);
+    --metal2: hsl(var(--blueBase) 8% 84%);
+
+    /* colores de la decoracon */
+    --anillo: hsl(var(--blueBase) 92% 52%);
+    --anillo2: hsl(var(--blueBase) 92% 60%);
+    --negro: hsl(var(--blueBase) 18% 12%);
+    --blanco: hsl(var(--blueBase) 10% 98%);
+
+    /*Color del fondo */
+    --bg: hsl(var(--blueBase) 35% 6%);
+
+}
+
+/* normalizar el box-model para facilitar el uso de grid y flex */
+*{
+    box-sizing: border-box;
+}
+
