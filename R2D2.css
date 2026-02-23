@@ -80,7 +80,7 @@ body{
     width: min(92%, 420px);
     display: grid;
     grid-template-rows: auto auto auto;
-    gap: clamp(8px, 1.6vw, 14px);
+    gap: 0;
     place-items: center;
 }
 
@@ -97,7 +97,7 @@ body{
     gap: clamp(6px, 1.2vw, 10px);
     padding: clamp(10px, 2vw, 18px);
 
-    border-radius: 999px 999px 80px 80px;
+    border-radius: 999px 999px 0 0;
 
     background: linear-gradient(var(--metal), var(--metal2));
 }
@@ -125,6 +125,38 @@ body{
         radial-gradient(circle at 45% 55%, 
             hsl(var(--blueBase) 90% 70%) 0 28%, 
             hsl(var(--blueBase) 60% 10%) 29% 100%);
+}
+
+/*ojo*/
+.ojo{
+  width: clamp(22px, 4vw, 36px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 30%, var(--blanco) 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 50%, 
+      hsl(var(--blueBase) 90% 65%) 0 35%, 
+      hsl(var(--blueBase) 60% 10%) 36% 100%);
+}
+
+.rectanguloOjo{
+  width: clamp(16px, 3vw, 26px);
+  height: clamp(22px, 4.5vw, 32px);
+  border-radius: 6px;
+  background: var(--negro);
+}
+
+.panelCentral{
+  display: grid;
+  place-items: center;
+  gap: clamp(4px, 1vw, 8px);
+
+  width: clamp(60px, 12vw, 100px);
+  height: clamp(80px, 16vw, 120px);
+
+  border-radius: 10px;
+  background: linear-gradient(var(--blue3), var(--blue));
 }
 
 /* lineas azules de la cabeza */
@@ -170,7 +202,7 @@ body{
   gap: clamp(10px, 1.8vw, 14px);
 
   padding: clamp(10px, 2vw, 18px);
-  border-radius: 28px;
+
   background: linear-gradient(var(--blanco), var(--metal));
 }
 
