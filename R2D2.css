@@ -58,7 +58,7 @@ body{
     border-radius: 50%;
     border: clamp(12px, 2.8vw, 24px) solid var(--anillo);
 
-    outline: clamp(6px, 1.5vq, 14px) solid hsl(var(--blueBase) 25% 3% / .85);
+    outline: clamp(6px, 1.5vw, 14px) solid hsl(var(--blueBase) 25% 3% / .85);
     outline-offset: -clamp(14px, 3vw, 26px);
 
     display: grid;
@@ -80,7 +80,7 @@ body{
     width: min(92%, 420px);
     display: grid;
     grid-template-rows: auto auto auto;
-    gap: clamp(8px, 1.6vq, 14px);
+    gap: clamp(8px, 1.6vw, 14px);
     place-items: center;
 }
 
@@ -116,9 +116,86 @@ body{
 .cabeza::after{
     content: "";
     justify-self: center;
+    width: clamp(26px, 5vw, 42px);
+    height: clamp(26px, 5vw, 42px);
     aspect-ratio: 1;
     border-radius: 50%;
     background: 
         radial-gradient(circle at 30% 30%, var(--blanco) 0 18%, transparent 19%),
-        radial-gradient(circle at 45% 55%, hsl(var(--blueBase) 90% 70%) 0 28%, hsl(var(--blueBase) 60% 10%) 29% 100%);
+        radial-gradient(circle at 45% 55%, 
+            hsl(var(--blueBase) 90% 70%) 0 28%, 
+            hsl(var(--blueBase) 60% 10%) 29% 100%);
+}
+
+/* lineas azules de la cabeza */
+.lineas{
+    display: flex;
+    gap: clamp(8px, 1.4vw, 14px);
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* panel */
+.panel{
+    flex: 1;
+    height: clamp(14px, 2.4vw, 22px);
+    border-radius: 8px;
+    background: linear-gradient(var(--blue3), var(--blue));
+}
+
+/*selector adyacente */
+.panel + .panel{
+    filter: saturate(1.08);
+}
+
+/*selector general */
+.panel ~ .panel{
+    opacity: .96;
+}
+
+/*first-child*/
+.panel:first-child{ border-radius: 16px 6px 6px 16px; }
+.panel:last-child{ border-radius: 6px 16px 16px 6px; }
+
+/*nth-child*/
+.panel:nth-child(2){
+  background: linear-gradient(var(--blue3), var(--blue2));
+}
+
+/*Cuerpo de R2-D2 */
+.body{
+  width: 92%;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: clamp(10px, 1.8vw, 14px);
+
+  padding: clamp(10px, 2vw, 18px);
+  border-radius: 28px;
+  background: linear-gradient(var(--blanco), var(--metal));
+}
+
+
+/*Selector descendiente */
+.body .detail{
+  text-transform: uppercase;
+}
+
+/*Selector de hijo directo */
+.body > .row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: clamp(8px, 1.6vw, 14px);
+}
+
+.stripe{
+  height: clamp(22px, 3.6vw, 34px);
+  border-radius: 12px;
+  background: linear-gradient(var(--blue3), var(--blue));
+}
+
+/*Media */
+@media (max-width: 520px){
+  .body > .row{
+    grid-template-columns: 1fr 1fr;
+  }
 }
