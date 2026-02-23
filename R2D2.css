@@ -199,12 +199,19 @@ body{
   width: 92%;
   display: grid;
   grid-template-rows: auto auto;
+
   gap: clamp(10px, 1.8vw, 14px);
 
-  padding: clamp(10px, 2vw, 18px);
+  padding-left: clamp(10px, 2vw, 18px);
+  padding-right: clamp(10px, 2vw, 18px);
+  padding-bottom: clamp(10px, 2vw, 18px);
+  padding-top: 0; /* 👈 elimina espacio arriba */
+
+  align-content: start;
 
   background: linear-gradient(var(--blanco), var(--metal));
 }
+
 
 
 /*Selector descendiente */
@@ -217,6 +224,7 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: clamp(8px, 1.6vw, 14px);
+  align-items: start; /* 👈 esto sube las stripes */
 }
 
 .stripe{
@@ -231,3 +239,4 @@ body{
     grid-template-columns: 1fr 1fr;
   }
 }
+
